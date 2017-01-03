@@ -13,5 +13,10 @@
 {% elsif estimated_minutes < one_day %}
     {{ estimated_minutes | divided_by:hour }} horas
 {% else %}
-    {{ estimated_minutes | divided_by:one_day }} dia
+    {% assign days = estimated_minutes | divided_by:one_day %}
+    {% if days <= 1 %}
+        {{ days }} dia
+    {% else %}
+        {{ days }} dias
+    {% endif %}
 {% endif %} de leitura
