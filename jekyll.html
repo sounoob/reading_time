@@ -1,9 +1,9 @@
 {% assign post = page %}
-{% assign wpm = 250 %}
+{% assign wpm = 200 %}
 {% assign hour = 60 %}
 {% assign one_day = 1440 %}
 {% assign words = post.content | number_of_words %}
-{% assign estimated_minutes = words | divided_by:180 %}
+{% assign estimated_minutes = words | divided_by:wpm %}
 <span class="reading-time" title="Tempo estimado de leitura">
     {% if estimated_minutes < 1 %}
         Menos de um minuto
